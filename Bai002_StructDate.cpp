@@ -50,17 +50,18 @@ Date getnextXDay(Date current, int x) {
     Date nextXDate = current;
     nextXDate.day+=x;
 
-    if (nextXDate.day > daysInMonth(current.month, current.year)) {  //Dang kiem tra
-        nextXDate.day = 1;
+   if (nextXDate.day > daysInMonth(current.month, current.year)) {
+   		
+        nextXDate.day = x-(daysInMonth(current.month, current.year)-current.day);
         nextXDate.month++;
 
         if (nextXDate.month > 12) {
-            nextXDate.month = x;
+            nextXDate.month = 1;
             nextXDate.year++;
         }
     }
 
-    return nextDate;
+    return nextXDate;
 }
 
 int main() {
@@ -78,11 +79,11 @@ int main() {
 
     cout << "Ngay tiep theo la: " << nextDay.day << "/" << nextDay.month << "/" << nextDay.year << endl;
 
-    cout << "Ngay chinh xac cua X ngay tiep theo, voi X = ";
+    cout << "Ngay chinh xac cua X ngay tiep theo: ";
     int x; cin >> x; 
 
-    Date nextXDay = getNextXDay(today,x);
+    Date nextXDay = getnextXDay(today,x);
 
-    cout << " la: " << nextXDay.day << "/" << nextXDay.month << "/" << nextXDay.year << endl;
+    cout << "Vay "<<x <<" ngay tiep theo se la: "<< nextXDay.day << "/" << nextXDay.month << "/" << nextXDay.year << endl;
     return 0;
 }
