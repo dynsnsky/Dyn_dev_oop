@@ -10,7 +10,12 @@ void PhanSo::Nhap()
 
 void PhanSo::Xuat()
 {
-	cout << TuSo << "/" << MauSo;
+	if (TuSo != 0 && MauSo !=1 )
+		cout << TuSo << "/" << MauSo;
+	else {
+		if (TuSo == 0) cout << 0;
+		else if (MauSo == 1) cout << TuSo;
+	}
 	cout << endl;
 }
 

@@ -1,8 +1,8 @@
 #include "PhanSo.h"
 void main() {
-	PhanSo a, b;
+	PhanSo a,b;
 	a.Nhap();
-	b.Nhap();
+	b = PhanSo(5, 9);
 	PhanSo tong = a.Tong(b);
 	PhanSo hieu = a.Hieu(b);
 	PhanSo tich = a.Tich(b);
@@ -11,6 +11,7 @@ void main() {
 	a.Xuat();
 	cout << "Phan so thu hai: ";
 	b.Xuat();
+
 	cout << "Tong la ";
 	tong.rutgonPS();
 	tong.Xuat();
